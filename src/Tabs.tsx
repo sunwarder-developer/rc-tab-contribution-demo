@@ -218,7 +218,7 @@ function Tabs(
     style: tabBarStyle,
     panes: children,
   };
-
+  
   if (renderTabBar) {
     tabNavBar = renderTabBar(tabNavBarProps, TabNavList);
   } else {
@@ -226,14 +226,13 @@ function Tabs(
   }
   
   useEffect(() => {
-    if(allowScrollCrossTabOnTouchMove){
-      const rcTabsNav = document.getElementsByClassName('rc-tabs-nav')[0];
-      if(rcTabsNav){
-        rcTabsNav.addEventListener('touchmove', (ev) => {
-          ev.stopPropagation();
-        })
-      }
+    const rcTabsNav : Element = document.getElementsByClassName('rc-tabs-nav')[0];
+    if(rcTabsNav && allowScrollCrossTabOnTouchMove){
+      rcTabsNav.addEventListener('touchmove', function(ev){
+        ev.stopPropagation();
+      })
     }
+      
   }, []);
 
   return (
