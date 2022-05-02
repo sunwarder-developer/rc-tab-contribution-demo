@@ -25,6 +25,7 @@ export default () => {
   return (
     <React.StrictMode>
        <div className="App">
+         <h1>Turn on Device Tools in Developer Tools. Switch mobile mode to test Touch Move.</h1>
        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-end', margin: '0 0 10px 0'}}>
          <p style={{margin: '0', fontWeight: 'bold'}}>allowScrollCrossTabOnTouchMove:</p>
          <Switch style={{marginLeft: '10px'}} onChange={onAllowScrollCrossTabOnTouchMoveChange} checkedChildren="On" unCheckedChildren="Off" defaultChecked={getBooleanFromString(localStorage.getItem('allowScrollCrossTabOnTouchMove'))} />
